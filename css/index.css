@@ -1,0 +1,8 @@
+.toDoList {
+  text-align: center;
+}
+.matter {
+}
+.matter > * {
+  display: inline-block;
+}
