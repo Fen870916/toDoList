@@ -10,6 +10,7 @@ function clickAddButton() {
       `<div class="number">` +
       (number + 1) +
       `</div>
+      <button class="status undone">X</button>
             <div class="content">` +
       document.querySelector('.enter').value +
       `</div>
@@ -42,7 +43,10 @@ function clickEditButton(e) {
   let flag
   let number
   for (i = 0; i < document.querySelectorAll('.edit').length; i++) {
-    if (e.target === document.querySelectorAll('.edit')[i]) {
+    if (
+      e.target === document.querySelectorAll('.edit')[i] &&
+      e.target.parentNode.querySelector('.status').classList.contains('undone')
+    ) {
       document.querySelector('.enter').focus()
       document.querySelector('.enter').value =
         e.target.parentNode.querySelector('.content').innerHTML
@@ -64,11 +68,24 @@ function clickEditButton(e) {
 document.querySelector('.list').addEventListener('click', clickStatusButton)
 function clickStatusButton(e) {
   for (i = 0; i < document.querySelectorAll('.status').length; i++) {
-    if (e.target === document.querySelectorAll('.status')[i]) {
+    if (
+      e.target === document.querySelectorAll('.status')[i] &&
+      e.target.classList.contains('undone')
+    ) {
       e.target.innerHTML = `O`
-      e.target.parentNode.querySelector('.content').value = e.target.parentNode
-        .querySelector('.content')
-        .value.strike()
+      e.target.classList.remove('undone')
+      e.target.classList.add('complete')
+      e.target.parentNode.querySelector('.content').innerHTML =
+        e.target.parentNode.querySelector('.content').innerText.strike()
+    } else if (
+      e.target === document.querySelectorAll('.status')[i] &&
+      e.target.classList.contains('complete')
+    ) {
+      e.target.innerHTML = `X`
+      e.target.classList.remove('complete')
+      e.target.classList.add('undone')
+      e.target.parentNode.querySelector('.content').innerHTML =
+        e.target.parentNode.querySelector('.content').innerText
     }
   }
 }
