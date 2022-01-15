@@ -77,6 +77,9 @@ function clickStatusButton(e) {
       e.target.classList.add('complete')
       e.target.parentNode.querySelector('.content').innerHTML =
         e.target.parentNode.querySelector('.content').innerText.strike()
+      if (!document.querySelector('.list').classList.contains('all')) {
+        clickUndoneButton()
+      }
     } else if (
       e.target === document.querySelectorAll('.status')[i] &&
       e.target.classList.contains('complete')
@@ -86,6 +89,65 @@ function clickStatusButton(e) {
       e.target.classList.add('undone')
       e.target.parentNode.querySelector('.content').innerHTML =
         e.target.parentNode.querySelector('.content').innerText
+      if (!document.querySelector('.list').classList.contains('all')) {
+        clickCompleteButton()
+      }
     }
   }
+}
+
+// 分類
+// 全部
+document.querySelector('.all').addEventListener('click', clickAllButton)
+function clickAllButton() {
+  for (i = 0; i < document.querySelectorAll('.matter>.status').length; i++) {
+    document.querySelectorAll('.matter>.status')[i].parentNode.style.display =
+      'block'
+  }
+  if (!document.querySelector('.list').classList.contains('all')) {
+    document.querySelector('.list').classList.add('all')
+  }
+}
+
+// 完成
+document
+  .querySelector('.sort>.complete')
+  .addEventListener('click', clickCompleteButton)
+function clickCompleteButton() {
+  console.log(1)
+  for (i = 0; i < document.querySelectorAll('.matter>.status').length; i++) {
+    if (
+      !document
+        .querySelectorAll('.matter>.status')
+        [i].classList.contains('complete')
+    ) {
+      document.querySelectorAll('.matter>.status')[i].parentNode.style.display =
+        'none'
+    } else {
+      document.querySelectorAll('.matter>.status')[i].parentNode.style.display =
+        'block'
+    }
+  }
+  document.querySelector('.list').classList.remove('all')
+}
+
+// 未完成
+document
+  .querySelector('.sort>.undone')
+  .addEventListener('click', clickUndoneButton)
+function clickUndoneButton() {
+  for (i = 0; i < document.querySelectorAll('.matter>.status').length; i++) {
+    if (
+      !document
+        .querySelectorAll('.matter>.status')
+        [i].classList.contains('undone')
+    ) {
+      document.querySelectorAll('.matter>.status')[i].parentNode.style.display =
+        'none'
+    } else {
+      document.querySelectorAll('.matter>.status')[i].parentNode.style.display =
+        'block'
+    }
+  }
+  document.querySelector('.list').classList.remove('all')
 }
