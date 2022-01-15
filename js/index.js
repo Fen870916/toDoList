@@ -16,6 +16,9 @@ function clickAddButton() {
       `</div>
                 <button class="edit">edit</button>
                 <button class="delete">delete</button>`
+    if (document.querySelector('.list').classList.contains('complete')) {
+      matter.style.display = 'none'
+    }
     document.querySelector('.list').appendChild(matter)
     document.querySelector('.enter').value = ''
   }
@@ -128,7 +131,12 @@ function clickCompleteButton() {
         'block'
     }
   }
+
+  if (!document.querySelector('.list').classList.contains('complete')) {
+    document.querySelector('.list').classList.add('complete')
+  }
   document.querySelector('.list').classList.remove('all')
+  document.querySelector('.list').classList.remove('undone')
 }
 
 // 未完成
@@ -149,5 +157,9 @@ function clickUndoneButton() {
         'block'
     }
   }
+  if (!document.querySelector('.list').classList.contains('undone')) {
+    document.querySelector('.list').classList.add('undone')
+  }
   document.querySelector('.list').classList.remove('all')
+  document.querySelector('.list').classList.remove('complete')
 }
