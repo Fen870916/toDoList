@@ -1,3 +1,5 @@
+// 按下edit後被編輯的事項會有顏色上的變化
+
 // 新增matter
 document.querySelector('.add').addEventListener('click', clickAddButton)
 function clickAddButton() {
@@ -50,6 +52,8 @@ function clickEditButton(e) {
       e.target === document.querySelectorAll('.edit')[i] &&
       e.target.parentNode.querySelector('.status').classList.contains('undone')
     ) {
+      // 按下edit後被編輯的事項會有顏色上的變化
+      e.target.parentNode.style.backgroundColor = 'red'
       document.querySelector('.enter').focus()
       document.querySelector('.enter').value =
         e.target.parentNode.querySelector('.content').innerHTML
@@ -59,6 +63,10 @@ function clickEditButton(e) {
     document.querySelector('.enter').addEventListener('blur', contentBlur)
     function contentBlur(e) {
       if (flag === 1) {
+        // 取消或完成編輯後編輯的事項會恢復原有的顏色
+        document.querySelectorAll('.content')[
+          number
+        ].parentNode.style.backgroundColor = 'transparent'
         document.querySelectorAll('.content')[number].innerHTML = e.target.value
         e.target.value = ''
         flag = 0
