@@ -2,7 +2,7 @@
 document.querySelector('.add').addEventListener('click', clickAddButton)
 function clickAddButton() {
   // 有輸入才可以新增
-  if (document.querySelector('.enter').value !== '') {
+  if (document.querySelector('.enter').value.trim().length !== 0) {
     let matter = document.createElement('div')
     matter.classList.add('matter')
     matter.innerHTML =
@@ -17,6 +17,8 @@ function clickAddButton() {
       matter.style.display = 'none'
     }
     document.querySelector('.list').appendChild(matter)
+    document.querySelector('.enter').value = ''
+  } else if (document.querySelector('.enter').value.trim().length === 0) {
     document.querySelector('.enter').value = ''
   }
 }
@@ -55,13 +57,20 @@ function clickContentButton(e) {
     }
     document.querySelector('.enter').addEventListener('blur', contentBlur)
     function contentBlur(e) {
-      if (flag === 1) {
+      if (flag === 1 && this.value.trim().length !== 0) {
         // 取消或完成編輯後編輯的事項會恢復原有的顏色
         document.querySelectorAll('.content')[
           number
         ].parentNode.style.backgroundColor = 'wheat'
-        document.querySelectorAll('.content')[number].innerHTML = e.target.value
-        e.target.value = ''
+        document.querySelectorAll('.content')[number].innerHTML = this.value
+        this.value = ''
+        flag = 0
+      } else if (flag === 1 && this.value.trim().length === 0) {
+        alert('內容不可為空白')
+        document.querySelectorAll('.content')[
+          number
+        ].parentNode.style.backgroundColor = 'wheat'
+        this.value = ''
         flag = 0
       }
     }
