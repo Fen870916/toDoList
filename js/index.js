@@ -1,5 +1,3 @@
-// 按下edit後被編輯的事項會有顏色上的變化
-
 // 新增matter
 document.querySelector('.add').addEventListener('click', clickAddButton)
 function clickAddButton() {
@@ -190,4 +188,17 @@ function clickUndoneButton() {
   }
   document.querySelector('.list').classList.remove('all')
   document.querySelector('.list').classList.remove('complete')
+}
+
+// 文字超過顯示範圍 滑鼠移到文字上方顯示完整內容
+
+document.querySelector('.list').addEventListener('mouseover', mouseoverContent)
+
+function mouseoverContent(e) {
+  if (
+    e.target.classList.contains('content') &&
+    e.target.scrollWidth > e.target.offsetWidth
+  ) {
+    e.target.title = e.target.innerHTML
+  }
 }
