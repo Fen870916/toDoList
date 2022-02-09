@@ -1,8 +1,102 @@
+:root {
+  --allWidth: 300px;
+}
+
+body {
+  background-color: white;
+  color: black;
+}
+
 .toDoList {
+  margin: auto;
+  width: var(--allWidth);
   text-align: center;
 }
+
+.title {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.function {
+  font-size: 0;
+  margin-bottom: 5px;
+}
+
+.enter {
+  vertical-align: top;
+  height: 26px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid black;
+  width: 267px;
+}
+.add {
+  font-size: 24px;
+  border: 0;
+  background-color: #e4e4e4;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.sort {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sort > button {
+  border: 0;
+  border-radius: 13px;
+  background-color: #e4e4e4;
+  font-size: 18px;
+}
+
 .matter {
+  width: var(--allWidth);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: wheat;
+  position: relative;
 }
 .matter > * {
   display: inline-block;
+}
+.matter > button {
+  border: 0;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  background-color: transparent;
+}
+
+.matter > .status {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  left: 0;
+}
+
+.matter > .delete {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  right: 0;
+}
+
+/*  */
+.content {
+  width: 232px;
+  margin: 0;
+  height: 30px;
+  font-size: 18px;
+  line-height: 30px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
