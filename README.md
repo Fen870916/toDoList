@@ -1,5 +1,5 @@
 <h1>toDoList</h1>
-    前往<a href="https://fen870916.github.io/toDoList/" target="_blank"
+    前往<a href="https://fen870916.github.io/toDoList/"
       >作品</a
     >
     <h2>功能</h2>
