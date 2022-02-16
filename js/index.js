@@ -145,6 +145,8 @@ function clickAllButton() {
   }
   if (!document.querySelector('.list').classList.contains('all')) {
     document.querySelector('.list').classList.add('all')
+    document.querySelector('.list').classList.remove('undone')
+    document.querySelector('.list').classList.remove('complete')
   }
 }
 
