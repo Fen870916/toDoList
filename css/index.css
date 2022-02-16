@@ -76,6 +76,7 @@ body {
   height: 30px;
   font-size: 18px;
   background-color: transparent;
+  vertical-align: top;
 }
 
 .matter > .status {
@@ -93,7 +94,7 @@ body {
 .content {
   width: 232px;
   margin: 0;
-  height: 22px;
+  height: 30px;
   font-size: 18px;
   line-height: 30px;
   text-overflow: ellipsis;
