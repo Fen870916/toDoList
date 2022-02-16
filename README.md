@@ -12,7 +12,6 @@
     <li>編輯完按其他區域即編輯完成</li><br>
     <img src="./gif/編輯.gif" alt="" />
     <li>編輯所輸入的文字不能為空白</li><br>
-    <img src="./gif/輸入文字不為空白.gif" alt="" /><br>
     <h3>刪除</h3>
     <li>刪除選項</li><br>
     <img src="./gif/刪除.gif" alt="" /><br>
