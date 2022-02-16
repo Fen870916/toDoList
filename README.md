@@ -18,11 +18,11 @@
     <img src="./gif/刪除.gif" alt="" /><br>
     <h3>狀態</h3>
     <li>按下X可改變狀態</li><br>
-    <img src="./gif/狀態.gif" alt="" /><br>
+    <img src="./gif/complete.gif" alt="" /><br>
     <h3>狀態分類</h3>
     <li>按下上方all可查看所有事項</li><br>
-    <img src="./gif/all狀態.gif" alt="" />
-    <li>按下上方undone可查看未完成事項</li><br>
-    <img src="./gif/undone狀態.gif" alt="" />
+    <img src="./gif/undone_all.gif" alt="" />
     <li>按下上方complete可查看已完成事項</li><br>
-    <img src="./gif/complete狀態.gif" alt="" />
+    <img src="./gif/complete.gif" alt="" />
+    <li>按下上方undone可查看未完成事項</li><br>
+    <img src="./gif/undone_all.gif" alt="" />
